@@ -1,0 +1,118 @@
+:root {
+    --white: white;
+    --grey: lightgrey;
+    --black: black;
+}
+
+body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+/*************************************************************************************************/
+/************************************* Navigation Bar ********************************************/
+/*************************************************************************************************/
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    border-bottom: var(--black) solid 2px;
+    color: var(--black);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+}
+
+.site-title {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 5em;
+    margin-left: .8em;
+}
+
+.nav-item {
+    margin: 0 .8em;
+    font-size: 1.9em;
+    font-weight: bold;
+    font-family: 'Architects Daughter', cursive;
+    color: var(--black);
+}
+.nav-item:hover {
+    color: var(--black);
+}
+
+.admin, .create-article {
+    margin-right: 2em;
+}
+
+.admin {
+    cursor: pointer;
+}
+
+.password-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-password {
+    width: 10vw;
+    margin-right: 2em;
+    border: var(--black) solid 1px;
+    border-radius: 2px;
+    background-color: var(--grey);
+}
+
+/*************************************************************************************************/
+/************************************* Recent Articles *******************************************/
+/*************************************************************************************************/
+
+.recent-articles {
+    position: sticky;
+    top: 4vh;
+    border: var(--black) solid 2px;
+    border-radius: 10px;
+    padding: 1em;
+    padding-bottom: 0;
+}
+
+.recent {
+    border-bottom: var(--black) solid 2px;
+    margin-bottom: .5em;
+    text-align: center;
+    font-size: 2em;
+}
+
+.article {
+    margin-bottom: 3vh;
+}
+
+.article-title {
+    font-size: 1.4em;
+    color: black;
+}
+
+.article-snippet {
+    color: var(--black);
+}
+
+.margin {
+    margin-top: 4vh;
+}
+
+/*************************************************************************************************/
+/******************************************* Footer **********************************************/
+/*************************************************************************************************/

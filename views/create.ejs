@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <%- include("./components/header.ejs") %>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <%- include("./components/navbar.ejs") %>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="info">
+                        <form action="/articles" method="POST">
+                            <div class="flex">
+                                <label class="label" for="title">Article Title:</label>
+                                <input type="text" class="input form-title" name="title" required>
+                            </div>
+                            <div class="flex">
+                                <label class="label" for="title">Article Snippet:</label>
+                                <input type="text" class="input form-snippet" name="snippet" required>
+                            </div>
+                            <div class="flex">
+                                <label class="label" for="title">Article Body:</label>
+                                <textarea class="input form-body" name="body" required></textarea>
+                            </div>
+                            <div class="submit-container">
+                                <button class="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-4 margin">
+                    <%- include("./components/recentArticles.ejs") %>
+                </div>
+            </div>
+        </div>
+
+        <%- include("./components/footer.ejs") %>
+    </body>
+</html>

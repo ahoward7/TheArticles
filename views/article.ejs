@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <%- include("./components/header.ejs") %>
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <%- include("./components/navbar.ejs") %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <div class="info">
+                        <div>
+                            <h2><%= article.title %></h2>
+                            <div>
+                                <p><%= article.body %></p>
+                            </div>
+                            <a class="delete" data-doc="<%= article._id %>">Delete</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 margin">
+                    <%- include("./components/recentArticles.ejs") %>
+                </div>
+            </div>
+        </div>
+
+        <%- include("./components/footer.ejs") %>
+
+        <script>
+            const trashcan = document.querySelector('a.delete');
+            trashcan.addEventListener('click', (e) => {
+                const endpoint = `/articles/${trashcan.dataset.doc}`;
+
+                fetch(endpoint, {
+                    method: "DELETE"
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    window.location.href = data.redirect;
+                })
+                .catch(err => console.log(err))
+            })
+        </script>
+    </body>
+</html>
