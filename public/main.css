@@ -68,7 +68,7 @@ a:hover {
     justify-content: center;
 }
 
-.admin-password {
+.password {
     width: 10vw;
     margin-right: 2em;
     border: var(--black) solid 1px;

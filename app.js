@@ -1,4 +1,7 @@
 const express = require('express');
+const cookieParser = require("cookie-parser");
+const session = require('express-session');
+
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const { render } = require('ejs');
@@ -19,6 +22,14 @@ app.listen(port);
 
 app.use(express.static('public'));
 app.use(express.urlencoded( { extended: true }));
+app.use(cookieParser());
+
+app.use(session({
+    secret: 'secret-key',
+    resave: false,
+    saveUninitialized: false,
+}));
+
 app.use(morgan('tiny'));
 
 app.get('/', (req, res) => {
@@ -28,7 +39,7 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     Article.find().sort({ createdAt: -1})
         .then((result) => {
-            res.render('about', { title: 'About', articles: result, css: 'about' });
+            res.render('about', { title: 'About', articles: result, css: 'about', loggedIn: req.session.login  });
 
         })
         .catch((err) => {
@@ -39,7 +50,7 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     Article.find().sort({ createdAt: -1})
         .then((result) => {
-            res.render('about', { title: 'Contact', articles: result, css: 'contact' });
+            res.render('about', { title: 'Contact', articles: result, css: 'contact', loggedIn: req.session.login  });
 
         })
         .catch((err) => {

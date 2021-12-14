@@ -5,39 +5,34 @@
         <a class="nav-item" href="/">Home</a>
         <a class="nav-item" href="/about">About</a>
         <a class="nav-item" href="/contact">Contact Us</a>
-        <div class="nav-item admin">Admin</div>
-        <form class="password-form">
-            <input type="password" class="admin-password" name="admin-password" required>
+        <% if (loggedIn == true) { %>
+            <a class="nav-item create" href="/articles/create">Create Article</a>
+        <% } %>
+        <% if (loggedIn == false) { %>
+            <div class="nav-item admin">Admin</div>
+        <% } %>
+        
+        <form class="password-form" action="/articles/create" method="POST">
+            <input type="password" class="password" name="password" required>
         </form>
 
-        <script>
-            $('.admin-password').css("display", "none");
+        <script>;
+            $('.password').hide();
 
             $('.admin').on({
                 "click": function() {
-                    $('.admin').css("display", "none");
-                    $('.admin-password').css({
-                        "display": "block",
-                    });
-                    $('.admin-password').focus();
+                    $('.admin').hide();
+                    $('.password').show();
+                    $('.password').focus();
                 },
             });
 
-            $('.admin-password').on({
+            $('.password').on({
                 "blur": function() {
-                    $('.admin-password').css("display", "none");
-                    $('.admin').css("display", "block");
+                    $('.password').hide();
+                    $('.admin').show();
                 },
-                "keypress": function(e) {
-                    if (e.which == 13) {
-                        e.preventDefault();
-                        if ($('.admin-password').val() == "Hello") {
-                            window.location.href = '/articles/create';
-                        }
-                    }
-                }
             });
-
         </script>
     </div>
 </nav>

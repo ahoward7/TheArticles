@@ -1,9 +1,13 @@
 const Article = require('../views/components/article');
 
 const article_index = (req, res) => {
+    if (!req.session.login) {
+        req.session.login = false;
+    }
+    
     Article.find().sort({ createdAt: -1})
         .then((result) => {
-            res.render('index', { title: 'Home', articles: result , css: 'index' })
+            res.render('index', { title: 'Home', articles: result , css: 'index' , loggedIn: req.session.login })
         })
         .catch((err) => {
             console.log(err);
@@ -19,7 +23,7 @@ const article_body = (req, res) => {
             a = result;
             Article.find().sort({ createdAt: -1})
             .then((result) => {
-                res.render('article', { article: a, articles: result, title: result.title, css: 'article' });
+                res.render('article', { article: a, articles: result, title: result.title, css: 'article', loggedIn: req.session.login });
             })
             .catch((err) => {
                 console.log(err);
@@ -33,11 +37,30 @@ const article_body = (req, res) => {
 const article_create_get = (req, res) => {
     Article.find().sort({ createdAt: -1})
         .then((result) => {
-            res.render('create', { title: 'Create an Article' , articles: result, css: 'create' })
+            res.render('create', { title: 'Create an Article' , articles: result, css: 'create', loggedIn: req.session.login  })
         })
         .catch((err) => {
             console.log(err);
         });
+}
+
+const article_create_postForm = (req, res) => {
+    if (req.body.password == "Hello") {
+        req.session.login = true;
+    }
+
+    if (req.session.login == true) {
+        Article.find().sort({ createdAt: -1})
+        .then((result) => {
+            res.render('create', { title: 'Create an Article' , articles: result, css: 'create', loggedIn: req.session.login })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+    else {
+        res.redirect('/articles')
+    }
 }
 
 const article_create_post = (req, res) => {
@@ -64,6 +87,7 @@ module.exports = {
     article_index,
     article_body,
     article_create_get,
+    article_create_postForm,
     article_create_post,
     article_delete,
 }

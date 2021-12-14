@@ -5,7 +5,7 @@
 }
 
 .input {
-    width: 50vw;
+    width: 90%;
     background-color: var(--grey);
     border: var(--black) solid 1px;
     border-radius: 2px;
@@ -16,7 +16,7 @@
 }
 
 .form-body {
-    height: 30vh;
+    height: 50vh;
 }
 
 .submit {

@@ -3,13 +3,17 @@
 
     <div>
         <% if (articles.length > 0) { %>
+            <% var count = 0;%>
             <% articles.forEach(article => { %>
+                <% if (count < 5) { %>
                 <a href="/articles/<%= article._id %>">
                     <div class="article">
                         <div class="article-title"><%= article.title %></div>
                         <div class="article-snippet"><%= article.snippet %></article></div>
                     </div>
                 </a>
+                <% count++; %>
+                <% } %>
             <% }) %>
         <% } else { %>
             <p>There are no articles to display</p>
