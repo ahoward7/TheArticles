@@ -1,3 +1,24 @@
+.art-title {
+    margin-top: 2.5vh;
+    margin-bottom: 1vh;
+    font-size: 3em;
+}
+
+.art-body-container {
+    margin-right: 6vw;
+    margin-bottom: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-top: var(--black) solid 2px;
+    border-bottom: var(--black) solid 2px;
+}
+
+.art-body {
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 1.2em;
+    white-space: pre-wrap;
+}
+
 .delete {
     cursor: pointer;
 }

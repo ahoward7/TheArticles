@@ -18,9 +18,9 @@
                 <div class="col-8">
                     <div class="info">
                         <div>
-                            <h2><%= article.title %></h2>
-                            <div>
-                                <p><%= article.body %></p>
+                            <div class="art-title"><%= article.title %></div>
+                            <div class="art-body-container">
+                                <div class="art-body"><%= article.body %></div>
                             </div>
                             <a class="delete" data-doc="<%= article._id %>">Delete</a>
                         </div>
