@@ -45,7 +45,7 @@ const article_create_get = (req, res) => {
 }
 
 const article_create_postForm = (req, res) => {
-    if (req.body.password == "Hello") {
+    if (req.body.password == "SecretPassword!") {
         req.session.login = true;
     }
 
