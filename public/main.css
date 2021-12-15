@@ -28,7 +28,8 @@ a:hover {
 
 .title {
     margin-right: 4vw;
-    margin-top: 3vh;
+    margin-top: 2vh;
+    margin-bottom: -1vh;
     font-size: 3em;
     text-align: center;
 }

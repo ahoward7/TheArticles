@@ -1,0 +1,31 @@
+.flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+}
+
+.input {
+    width: 90%;
+    background-color: var(--grey);
+    border: var(--black) solid 1px;
+    border-radius: 4px;
+}
+
+.label {
+    font-size: 1.3em;
+}
+
+.form-body {
+    height: 20vh;
+}
+
+.submit {
+    border: var(--black) solid 1px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    background-color: var(--green);
+}
+
+.submit-container {
+    margin-top: 1.5vh;
+}
