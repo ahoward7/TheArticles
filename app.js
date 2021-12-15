@@ -50,7 +50,7 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     Article.find().sort({ createdAt: -1})
         .then((result) => {
-            res.render('about', { title: 'Contact', articles: result, css: 'contact', loggedIn: req.session.login  });
+            res.render('contact', { title: 'Contact', articles: result, css: 'contact', loggedIn: req.session.login  });
 
         })
         .catch((err) => {

@@ -22,7 +22,9 @@
                             <div class="art-body-container">
                                 <div class="art-body"><%= article.body %></div>
                             </div>
-                            <a class="delete" data-doc="<%= article._id %>">Delete</a>
+                            <% if (loggedIn) { %>
+                                <div class="delete" data-doc="<%= article._id %>">Delete Article</div>
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -35,7 +37,7 @@
         <%- include("./components/footer.ejs") %>
 
         <script>
-            const trashcan = document.querySelector('a.delete');
+            const trashcan = document.querySelector('.delete');
             trashcan.addEventListener('click', (e) => {
                 const endpoint = `/articles/${trashcan.dataset.doc}`;
 

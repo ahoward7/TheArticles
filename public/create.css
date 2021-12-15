@@ -23,6 +23,7 @@
     border: var(--black) solid 1px;
     border-radius: 5px;
     font-size: 1.2em;
+    background-color: var(--green);
 }
 
 .submit-container {

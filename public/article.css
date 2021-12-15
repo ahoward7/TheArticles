@@ -1,11 +1,9 @@
 .art-title {
-    margin-top: 2.5vh;
     margin-bottom: 1vh;
     font-size: 3em;
 }
 
 .art-body-container {
-    margin-right: 6vw;
     margin-bottom: 2vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
@@ -20,5 +18,13 @@
 }
 
 .delete {
+    width: fit-content;
+    margin-top: 1vh;
+    padding: .2em;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    border: var(--black) solid 1px;
+    background-color: var(--red);
     cursor: pointer;
 }
