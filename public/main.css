@@ -56,7 +56,7 @@ a:hover {
 .site-title {
     font-family: 'Luxurious Script', cursive;
     font-size: 4.7em;
-    padding-left: .8em;
+    padding-left: .7em;
 }
 
 .navigation {
@@ -109,9 +109,9 @@ a:hover {
     background-color: var(--grey);
 }
 
-@media screen and (max-width: 1082px) {
+@media screen and (max-width: 1106px) {
     .nav-item {
-        font-size: 1.7em;
+        font-size: 1.6em;
     }
 
     .nav {
