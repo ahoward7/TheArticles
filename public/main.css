@@ -23,7 +23,13 @@ a:hover {
 }
 
 .info {
-    margin-right: 6vw;
+    margin-right: 8vw;
+}
+
+@media screen and (max-width: 993px) {
+    .info {
+        margin-right: 0;
+    }
 }
 
 .title {
@@ -38,12 +44,16 @@ a:hover {
 /************************************* Navigation Bar ********************************************/
 /*************************************************************************************************/
 
-.navbar {
-    display: flex;
-    flex-direction: row;
+.bar {
     padding: 0;
     border-bottom: var(--black) solid 2px;
     color: var(--black);
+}
+
+.site-title {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 4.7em;
+    padding-left: .8em;
 }
 
 .navigation {
@@ -51,19 +61,24 @@ a:hover {
     flex-direction: row;
 }
 
-.site-title {
-    font-family: 'Luxurious Script', cursive;
-    font-size: 5em;
-    margin-left: .8em;
+.nav {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .nav-item {
-    margin: 0 .8em;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .8em;
     font-size: 1.9em;
     font-weight: bold;
     font-family: 'Architects Daughter', cursive;
     color: var(--black);
 }
+
 .nav-item:hover {
     color: var(--black);
 }
@@ -89,6 +104,36 @@ a:hover {
     border-radius: 2px;
     background-color: var(--grey);
 }
+
+@media screen and (max-width: 1082px) {
+    .nav-item {
+        font-size: 1.7em;
+    }
+
+    .nav {
+        margin: 0 auto;  
+    }
+}
+
+@media screen and (max-width: 656px) {
+    .site-title {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3vh;  
+    }
+
+    .nav-item {
+        text-align: center;
+        margin-bottom: 1vh;
+    }
+}
+
 
 /*************************************************************************************************/
 /************************************* Recent Articles *******************************************/

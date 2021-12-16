@@ -1,38 +1,44 @@
-<nav class="navbar">
-    <div class="site-title"> The Articles </div>
+<nav class="bar">
+    <div class="row">
+        <div class="col-12 col-lg-4">
+            <div class="site-title">The Articles</div>
+        </div>
 
-    <div class="navigation">
-        <a class="nav-item" href="/">Home</a>
-        <a class="nav-item" href="/about">About</a>
-        <a class="nav-item" href="/contact">Contact Us</a>
-        <% if (loggedIn == true) { %>
-            <a class="nav-item create" href="/articles/create">Create Article</a>
-        <% } %>
-        <% if (loggedIn == false) { %>
-            <div class="nav-item admin">Admin</div>
-        <% } %>
-        
-        <form class="password-form" action="/articles/create" method="POST">
-            <input type="password" class="password" name="password" required>
-        </form>
-
-        <script>;
-            $('.password').hide();
-
-            $('.admin').on({
-                "click": function() {
-                    $('.admin').hide();
-                    $('.password').show();
-                    $('.password').focus();
-                },
-            });
-
-            $('.password').on({
-                "blur": function() {
-                    $('.password').hide();
-                    $('.admin').show();
-                },
-            });
-        </script>
+        <div class="col-12 col-lg-8 navigation">
+            <div class="nav">
+                <a class="nav-item" href="/">Home</a>
+                <a class="nav-item" href="/about">About</a>
+                <a class="nav-item" href="/contact">Contact Us</a>
+                <% if (loggedIn == true) { %>
+                    <a class="nav-item create" href="/articles/create">Create Article</a>
+                <% } %>
+                <% if (loggedIn == false) { %>
+                    <div class="nav-item admin">Admin</div>
+                <% } %>
+                
+                <form class="password-form" action="/articles/create" method="POST">
+                    <input type="password" class="password" name="password" required>
+                </form>
+            </div>
+        </div>
     </div>
 </nav>
+
+<script>;
+    $('.password').hide();
+
+    $('.admin').on({
+        "click": function() {
+            $('.admin').hide();
+            $('.password').show();
+            $('.password').focus();
+        },
+    });
+
+    $('.password').on({
+        "blur": function() {
+            $('.password').hide();
+            $('.admin').show();
+        },
+    });
+</script>
