@@ -33,7 +33,17 @@ app.use(session({
 app.use(morgan('tiny'));
 
 app.get('/', (req, res) => {
-    res.redirect('/articles');
+    if (!req.session.login) {
+        req.session.login = false;
+    }
+    
+    Article.find().sort({ createdAt: -1})
+        .then((result) => {
+            res.render('index', { title: 'Home', articles: result , css: 'index' , loggedIn: req.session.login })
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 });
 
 app.get('/about', (req, res) => {

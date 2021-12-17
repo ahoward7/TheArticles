@@ -7,7 +7,7 @@ const article_index = (req, res) => {
     
     Article.find().sort({ createdAt: -1})
         .then((result) => {
-            res.render('index', { title: 'Home', articles: result , css: 'index' , loggedIn: req.session.login })
+            res.render('articles', { title: 'All Articles', articles: result , css: 'articles' , loggedIn: req.session.login })
         })
         .catch((err) => {
             console.log(err);
