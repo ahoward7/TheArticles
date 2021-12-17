@@ -3,7 +3,7 @@ body {
 }
 
 .white {
-    height: 180%;
+    height: 170%;
     width: 100%;
     position: absolute;
     top: 0;
@@ -41,21 +41,16 @@ body {
 /***************************************** About *****************************************/
 
 .text-container {
-    height: 120vh;
+    height: 140vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
 }
 
-.subcontainer {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-}
-
 .subtitle {
+    margin-top: -45vh;
     margin-bottom: 5vh;
     font-size: 5em;
     text-align: center;

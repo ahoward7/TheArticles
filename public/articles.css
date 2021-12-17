@@ -1,0 +1,11 @@
+/*************************************** Articles *****************************************/
+.art-title {
+    margin-top: 4vh;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.art-snippet {
+    margin-top: 1vh;
+    font-size: 1.2em;
+}
