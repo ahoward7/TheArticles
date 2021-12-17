@@ -10,27 +10,86 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div data-bs-spy="scroll" data-bs-target="#list" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+            <div class="white">
 
-        <%- include("./components/navbar.ejs", { loggedIn: loggedIn }) %>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="info">
-                        <div class="mission">Our Mission</div>
-                        <div class="mission-text">We exist to exhort others to live a wholehearted life for Christ and disrupt the lives of those
-                            who live complacently. We want to accomplish this by writing articles that we are passionate about and integrating our 
-                            testimonies. Our goal is to spur each other on to live meaningful, Christlike lives, and not waste the little time we 
-                            have on this earth.
+            </div>
+    
+            <%- include("./components/navbar.ejs", { loggedIn: loggedIn }) %>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="info">
+                            <div class="title">Popular Articles</div>
+                            <div>
+                                <% if (articles.length > 0) { %>
+                                    <% articles.forEach(article => { %>
+                                        <a href="/articles/<%= article._id %>">
+                                            <div class="article">
+                                                <div class="art-title"><%= article.title %></div>
+                                                <div class="art-snippet"><%= article.snippet %></article></div>
+                                            </div>
+                                        </a>
+                                    <% }) %>
+                                <% } else { %>
+                                    <p>There are no articles to display</p>
+                                <% } %>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-12 col-lg-4 margin">
+                        <%- include("./components/recentArticles.ejs") %>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-4 margin">
-                    <%- include("./components/recentArticles.ejs") %>
+    
+                <div id="about" class="about">
+                    <div class="text-container">
+                        <div class="subcontainer">
+                            <div class="subtitle">Who We Are</div>
+                            <div class="subtext">
+                                We are a group Cedarville students who are sinners saved by grace alone, through faith alone, 
+                                in Christ alone, and we acknoweldge that we are no better than those we are trying to reach.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-container">
+                        <div class="subcontainer">
+                            <div class="subtitle">What We Have Seen</div>
+                            <div class="subtext">
+                                We have observed people who believe they are "good 
+                                enough," satisfied with where they are spirtually, those who glide through their 1000 days at
+                                Cedarville with no fruit to show for the salvation they claim to have.
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="text-container">
+                        <div class="subcontainer">
+                            <div class="subtitle">Why We Exist</div>
+                            <div class="subtext">
+                                We exist to exhort others, and ourselves, to live wholehearted lives for Christ and disrupt 
+                                the lives of those who live complacently. We want to plant seeds using our articles, conataining
+                                the things we are most passionate about, to spur each other on to live meaningful, Christlike 
+                                lives, and not waste the little time we have at Cedarville.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <%- include("./components/footer.ejs") %>
     </body>
+
+    <script>
+        $(window).scroll(function () {
+            var currentScrollTop = $(window).scrollTop();
+            var currentAlpha = Math.max(1.2 - ((currentScrollTop * 100 / 500) / 100), 0);
+            $(".white").css('opacity', currentAlpha);
+            $(".recent-articles").css('opacity', currentAlpha);
+            $("::-webkit-scrollbar").css('opacity', currentAlpha);
+        });
+    </script>
 </html>
