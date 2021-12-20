@@ -37,6 +37,8 @@
         <%- include("./components/footer.ejs") %>
 
         <script>
+            $(".art-body").html($(".art-body").text());
+            
             const trashcan = document.querySelector('.delete');
             trashcan.addEventListener('click', (e) => {
                 const endpoint = `/articles/${trashcan.dataset.doc}`;
@@ -76,7 +78,6 @@
             //     return newBody;
             // }
 
-            $(".art-body").html($(".art-body").text());
             
         </script>
     </body>
