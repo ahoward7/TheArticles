@@ -50,6 +50,34 @@
                 })
                 .catch(err => console.log(err))
             })
+
+            // const body = $(".art-body").text().split( " " )
+
+            // function insertItalics() {
+            //     var italics = false;
+            //     var newBody = "";
+
+            //     for ( var i = 0; i < body.length; ++i ) {
+            //         var word = body[i];
+
+            //         if (word == "<i>" && !italics) {
+            //             italics = true;
+            //             newBody += "<span class='italics'>"
+            //         }
+            //         else if (word == "<i>" && italics) {
+            //             italics = false;
+            //             newBody += "</span>"
+            //         }
+            //         else {
+            //             newBody += word + " ";
+            //         }
+            //     }
+
+            //     return newBody;
+            // }
+
+            $(".art-body").html($(".art-body").text());
+            
         </script>
     </body>
 </html>
