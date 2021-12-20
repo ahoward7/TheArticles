@@ -28,6 +28,11 @@
                                 <label class="label" for="title">Article Snippet:</label>
                                 <input type="text" class="input form-snippet" name="snippet" required>
                             </div>
+                            <div class="instructions">
+                                <div class="heading"></div>
+                                <div class="italic"></div>
+                                <div class="link"></div>
+                            </div>
                             <div class="flex">
                                 <label class="label" for="title">Article Body:</label>
                                 <textarea class="input form-body" name="body" required></textarea>
@@ -64,6 +69,10 @@
                     }
                 }
             });
+
+            $(".heading").text('Sub Heading: <h3>Text Here</h3>');
+            $(".italic").text('Italics: <i>Text Here</i>');
+            $(".link").text('Link: <a href="Link Here" target="_blank">Text Here</a>');
         </script>
     </body>
 </html>

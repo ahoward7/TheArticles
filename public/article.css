@@ -18,6 +18,10 @@
     white-space: pre-wrap;
 }
 
+h3 {
+    margin-bottom: -2.5vh;
+}
+
 .delete {
     width: fit-content;
     margin-top: 1vh;
