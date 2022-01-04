@@ -18,7 +18,7 @@
             <%- include("./components/navbar.ejs", { loggedIn: loggedIn }) %>
     
             <div class="container">
-                <div class="row">
+                <div class="popular row">
                     <div class="col-12 col-lg-8">
                         <div class="info">
                             <div class="title">Popular Articles</div>
@@ -78,14 +78,24 @@
     </body>
 
     <script>
-        var height = ($(".white").height()) + parseInt($(window).height());
+        var height = $(".bar").height() + $(".popular").height() + $(window).height();
+        alpha = height/550;
+
+        if ($(window).width() < 1200) {
+            alpha = height/900;
+        }
+
+        if ($(window).width() < 992) {
+            height = $(".bar").height() + $(".popular").height() + ($(window).height()*2);
+            alpha = height/450;
+        }
+
         $(".white").css("height", height);
         $(".about").css("margin-top", height/3)
 
         $(window).scroll(function () {
             var currentScrollTop = $(window).scrollTop();
-            var currentAlpha = Math.max(1.2 - ((currentScrollTop * 100 / 500) / 100), 0);
-            currentAlpha = Math.max((height/500) - ((currentScrollTop * 200 / 500) / 100), 0);
+            currentAlpha = Math.max((alpha) - ((currentScrollTop * 200 / 500) / 100), 0);
             $(".white").css('opacity', currentAlpha);
             $(".recent-articles").css('opacity', currentAlpha);
             $("::-webkit-scrollbar").css('opacity', currentAlpha);

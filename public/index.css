@@ -106,8 +106,9 @@ body {
 }
 
 @media screen and (max-width: 769px) {
-    .subcontainer {
-        height: 100vh;
+    .text-container {
+        height: 98vh;
+        transform: translateY(-60vh);
     }
 
     .subtitle {
@@ -122,10 +123,6 @@ body {
 }
 
 @media screen and (max-width: 577px) {
-    .subcontainer {
-        height: 100vh;
-    }
-
     .subtitle {
         margin-bottom: 3vh;
         font-size: 2em;
