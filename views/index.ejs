@@ -78,9 +78,14 @@
     </body>
 
     <script>
+        var height = ($(".white").height()) + parseInt($(window).height());
+        $(".white").css("height", height);
+        $(".about").css("margin-top", height/3)
+
         $(window).scroll(function () {
             var currentScrollTop = $(window).scrollTop();
             var currentAlpha = Math.max(1.2 - ((currentScrollTop * 100 / 500) / 100), 0);
+            currentAlpha = Math.max((height/500) - ((currentScrollTop * 200 / 500) / 100), 0);
             $(".white").css('opacity', currentAlpha);
             $(".recent-articles").css('opacity', currentAlpha);
             $("::-webkit-scrollbar").css('opacity', currentAlpha);

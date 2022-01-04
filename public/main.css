@@ -98,7 +98,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 0 .8em;
-    font-size: 1.7em;
+    font-size: 1.8em;
     font-weight: bold;
     font-family: 'Architects Daughter', cursive;
     color: var(--black);
@@ -127,7 +127,7 @@ a:hover {
     background-color: var(--grey);
 }
 
-@media screen and (max-width: 1263px) {
+@media screen and (max-width: 1080px) {
     .nav-item {
         font-size: 1.6em;
     }

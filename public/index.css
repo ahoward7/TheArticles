@@ -3,7 +3,7 @@ body {
 }
 
 .white {
-    height: 250%;
+    height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
@@ -27,6 +27,12 @@ body {
 
 
 /*************************************** Articles *****************************************/
+
+.recent-articles {
+    position: relative;
+    margin-top: -4vh;
+}
+
 .art-title {
     margin-top: 4vh;
     font-size: 2em;
