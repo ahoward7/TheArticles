@@ -76,7 +76,7 @@ a:hover {
 
 .site-title {
     font-family: 'Luxurious Script', cursive;
-    font-size: 4.7em;
+    font-size: 4.6em;
     padding-left: .7em;
 }
 
@@ -86,6 +86,7 @@ a:hover {
 }
 
 .nav {
+    margin-right: 1em;
     margin-left: auto;
     display: flex;
     flex-direction: row;
@@ -97,7 +98,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 0 .8em;
-    font-size: 1.9em;
+    font-size: 1.7em;
     font-weight: bold;
     font-family: 'Architects Daughter', cursive;
     color: var(--black);
@@ -105,10 +106,6 @@ a:hover {
 
 .nav-item:hover {
     color: var(--black);
-}
-
-.admin, .create-article {
-    margin-right: 2em;
 }
 
 .admin {
@@ -122,25 +119,27 @@ a:hover {
 }
 
 .password {
-    width: 10vw;
-    margin-right: 2em;
+    width: 150px;
+    margin-left: 1em;
     font-size: 1.2em;
     border: var(--black) solid 1px;
     border-radius: 2px;
     background-color: var(--grey);
 }
 
-@media screen and (max-width: 1106px) {
+@media screen and (max-width: 1263px) {
     .nav-item {
         font-size: 1.6em;
     }
+}
 
+@media screen and (max-width: 991px) {
     .nav {
-        margin: 0 auto;  
+        margin: 0 auto;
     }
 }
 
-@media screen and (max-width: 656px) {
+@media screen and (max-width: 739px) {
     .site-title {
         padding: 0;
         display: flex;
@@ -158,9 +157,9 @@ a:hover {
         margin-bottom: 1vh;
     }
 
-    .admin, .password {
+    /* .admin, .password {
         margin: 0 auto;
-    }
+    } */
 
     .password {
         width: 60%;
