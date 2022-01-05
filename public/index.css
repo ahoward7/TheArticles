@@ -63,7 +63,7 @@ body {
 }
 
 .subtext {
-    font-size: 3em;
+    font-size: 2.8em;
     width: 65%;
 }
 
@@ -108,7 +108,6 @@ body {
 @media screen and (max-width: 769px) {
     .text-container {
         height: 98vh;
-        transform: translateY(-60vh);
     }
 
     .subtitle {
@@ -119,6 +118,10 @@ body {
     .subtext {
         font-size: 2em;
         width: 100%;
+    }
+
+    .about {
+        margin-top: 0;
     }
 }
 
