@@ -93,14 +93,17 @@
 
         $(window).scroll(function () {
             var y = $(".about").position().top;
-            alpha = y/300;
 
             $(".white").css("height", "400vh");
-            $(".about").css("margin-top", "70vh")
 
             if ($(window).width() < 992) {
                 alpha = y/250;   
                 $(".about").css("margin-top", "95vh")
+                $(".footer-nav").css("margin-top", "-30vh")
+            }
+            else {  
+                alpha = y/300;
+                $(".about").css("margin-top", "70vh")
             }
 
             var currentScrollTop = $(window).scrollTop();
