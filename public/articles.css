@@ -1,4 +1,13 @@
 /*************************************** Articles *****************************************/
+.search {
+    width: 90%;
+    font-size: 1.2em;
+    margin: 3vh 5% 0 5%;
+    border: var(--black) solid 1px;
+    border-radius: 2px;
+    background-color: var(--grey);
+}
+
 .art-title {
     margin-top: 4vh;
     font-size: 2em;

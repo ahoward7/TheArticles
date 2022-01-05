@@ -18,6 +18,11 @@
                 <div class="col-12 col-lg-8">
                     <div class="info">
                         <div class="title">All Articles</div>
+
+                        <div class="searchbar">
+                            <input class="search" placeholder="Search for article...">
+                        </div>
+
                         <% if (articles.length > 0) { %>
                             <% articles.forEach(article => { %>
                                 <a href="/articles/<%= article._id %>">
@@ -40,5 +45,13 @@
 
         <%- include("./components/footer.ejs") %>
 
+        <script>
+            $(".search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $(".article").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        </script>
     </body>
 </html>
